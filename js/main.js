@@ -59,11 +59,12 @@ const addToCart = (title, url, price) => {
   const prevTotal = parseInt(document.getElementById("total").innerHTML || 0, 10)
   window.cartTotal = prevTotal + parseInt(price, 10)
   document.getElementById("total").innerHTML = window.cartTotal
-  const valTotal =document.getElementById("total").innerHTML;
+ 
 
   document.getElementById('has-cart').style.display = 'block'
 }
 
 const checkout = ()=> {
+  const valTotal =document.getElementById("total").innerHTML;
   window.open(`https://pay.h4b.dev/pl/PZauw3/?amount=${valTotal}&stay=0&callbackurl=${encodeURIComponent('https://n1coapp.github.io/ecommerce-demoJS/')}`, '_parent');
 }
